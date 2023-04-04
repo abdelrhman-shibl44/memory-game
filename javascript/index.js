@@ -37,7 +37,7 @@ document.querySelector(".memory-game .overlay span").onclick = function () {
       block.classList.remove("isflipped");
     }, 2000);
   });
-  document.querySelector("#calm").play();
+  audio.play();
 };
 mainContainer = document.querySelector(".blocks-container");
 block_container = document.querySelector(".blocks-container").children;
@@ -91,7 +91,7 @@ function checkIfMatched(firstBlock, secondBlock) {
     secondBlock.classList.remove("isflipped");
     firstBlock.classList.add("hasMatched");
     secondBlock.classList.add("hasMatched");
-    document.querySelector("#success").play();
+    success.play();
     if (if_equal === 8 && if_Notequal > 0 && if_Notequal < 7) {
       console.log(console.log(if_Notequal));
       createEndSuccessPopUp();
@@ -99,7 +99,7 @@ function checkIfMatched(firstBlock, secondBlock) {
         ".Message"
       ).innerHTML = `congratulations you made just ${if_Notequal} mistakes`;
       StylingMessage();
-      document.querySelector("#calm").pause();
+      audio.pause();
     }
   } else {
     if_Notequal++;
@@ -109,14 +109,14 @@ function checkIfMatched(firstBlock, secondBlock) {
         ".Message"
       ).innerHTML = `Failed you made ${if_Notequal} mistakes`;
       StylingMessage();
-      document.querySelector("#calm").pause();
+      audio.pause();
     }
     wrongTries.innerHTML = +wrongTries.innerHTML + 1;
     setTimeout((e) => {
       firstBlock.classList.remove("isflipped");
       secondBlock.classList.remove("isflipped");
     }, 1000);
-    document.querySelector("#fail").play();
+    fail.play();
   }
 }
 

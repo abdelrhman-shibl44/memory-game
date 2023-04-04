@@ -169,6 +169,7 @@
 .noclick{
   pointer-events:none;
 }
+/* start responsive */
 /* Small screens */
 @media (max-width: 576px) {
 
@@ -240,3 +241,5 @@
     width: 50%;
   }
 }
+/* end responsive */
+/* end coding */
