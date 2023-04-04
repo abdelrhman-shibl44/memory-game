@@ -177,7 +177,6 @@
     width: calc(100% - 10px);
   }
   
-
   .memory-game .blocks-container {
     width: 90%;
   }
@@ -201,6 +200,7 @@
   }
   .memory-game .overlay .Message {
     width: 80%;
+    top:40px;
   }
   .memory-game .memory-holder .info .line{
     display: block;
