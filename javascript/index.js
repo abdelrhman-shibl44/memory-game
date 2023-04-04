@@ -1,10 +1,13 @@
 // start memory game
 let if_equal = 0;
 let if_Notequal = 0;
-gameBlocks = document.querySelectorAll(".blocks-container .game-block");
-mainSection = document.querySelector(".memory-game");
-overlayGame = document.querySelector(".memory-game .overlay");
-HelloName = document.querySelector(".memory-holder .name span");
+const gameBlocks = document.querySelectorAll(".blocks-container .game-block");
+const mainSection = document.querySelector(".memory-game");
+const overlayGame = document.querySelector(".memory-game .overlay");
+const HelloName = document.querySelector(".memory-holder .name span");
+const message = document.querySelector(".Message")
+
+
 // control the volume of sound 
 const audio = document.querySelector("#calm");
 const success =  document.querySelector("#success")
@@ -139,11 +142,11 @@ function createEndSuccessPopUp() {
 }
 function StylingMessage() {
   setTimeout(function () {
-    if (document.querySelector(".Message").style.opacity < 1) {
-      document.querySelector(".Message").style.opacity = "1";
+    if (message.style.opacity < 1) {
+      message.style.opacity = "1";
     }
-    document.querySelector(".Message").style.width = "100%";
-    document.querySelector(".Message").style.top = "42%";
+    message.style.width = "100%";
+    message.style.top = "42%";
   }, 1000);
 }
-// end memoty game
+// end memory game
