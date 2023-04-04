@@ -1,0 +1,242 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+/* control volume */
+.control-volume{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+/* start memeory game */
+.memory-game{
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.memory-game::before{
+  content: "";
+  position: absolute;
+  width:100%;
+  left: 0;
+  background-color:#999;
+  height:2px;
+  border: 1px solid;
+  top:150px
+}
+.memory-game::after{
+  content: "";
+  position: absolute;
+  width:100%;
+  left: 0;
+  background-color:#999;
+  height:2px;
+  border: 1px solid;
+  bottom:0
+}
+.memory-game .memory-holder{
+  margin-top:25px;
+}
+.memory-game .memory-holder .info{
+  display: block;
+  width: calc(100% - 100px);
+  margin: auto;
+  border:2px solid rgb(86, 160, 229); ;
+  box-shadow: 0 0 5px  rgb(94, 168, 237);;
+  display:flex;
+  justify-content: space-between;
+  padding: 20px 25px;
+  font-weight:bold;
+  font-size:1.5rem;
+  color:#fff;
+  background-color: #000;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+}
+.memory-game .memory-holder .info .line {
+  width: 2px;
+  height: auto;
+  color:#fff;
+  background-color: #fff;
+  display: none;
+}
+.blocks-container{
+  display:flex;
+  flex-wrap: wrap;
+  width: 1000px;
+  justify-content: center;
+  margin: 50px auto;
+}
+.blocks-container .game-block{
+  height: 230px;
+  position: relative;
+  margin: 0 25px 35px;
+  flex: 1 0 160px;
+  display: flex;
+  justify-content: center;
+  transform-style:preserve-3d;
+  cursor:pointer;
+  transition: 0.5s transform ;
+}
+.blocks-container .game-block .face{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 5px  rgb(99, 174, 244);;
+  backface-visibility: hidden;
+  border:2px solid rgb(71 131 186);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blocks-container .game-block .front{
+  background-color: lightslategray;
+  transform: rotateY(180deg);
+
+  
+}
+.blocks-container .game-block .back{
+  background-color: rgb(55, 54, 54);
+}
+.blocks-container .game-block .back::before{
+  content:"?";
+  position: absolute;
+  font-size: 10rem;
+  font-weight:bold;
+  color:#fff;
+  left: 50%;
+  transform: translate(-50%);
+  
+}
+.blocks-container img{
+  max-width: 100%;
+  width: 140px;
+  height: calc(100% - 30px);
+  object-fit: cover;
+}
+.memory-game .overlay{
+  position:absolute;
+  background-color: rgba(64, 101, 171, 0.3);
+  box-shadow: inset 3px -71px 241px 20px rgb(64 101 171 / 30%);
+  width:100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  transition: 1s;
+  opacity: 1;
+}
+.memory-game .overlay .Message{
+  position: absolute;
+  top: 0%;
+  background: #fff;
+  width: 50%;
+  color: #444;
+  text-align: center;
+  opacity: 0;
+  transition: all 1s;
+  border-radius: 0;
+  padding: 10px;
+  box-shadow:  0  0 80px rgb(51 95 162);
+  cursor: none;
+}
+
+.memory-game .overlay span{
+  position: absolute;
+  color:#fff;
+  font-size:2.3rem;
+  background-color:rgb(51, 95, 162);
+  padding:7px 17px;
+  border-radius:10px;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  cursor:pointer;
+  z-index: 100;
+  width: 250px;
+}
+.isflipped,
+.hasMatched{
+  transform:rotateY(180deg)
+}
+.noclick{
+  pointer-events:none;
+}
+/* Small screens */
+@media (max-width: 576px) {
+
+  .memory-game .memory-holder .info {
+    font-size: 1rem;
+    width: calc(100% - 10px);
+  }
+  
+
+  .memory-game .blocks-container {
+    width: 90%;
+  }
+  .blocks-container .game-block {
+    flex: 1 0 calc(25.33% - 20px);
+    height: 125px;
+    margin: 0 20px 0px ;
+  }
+  .blocks-container .game-block .back::before {
+    font-size: 6rem;
+  }
+  
+  .blocks-container .game-block .face {
+    height: 80%;
+    width: calc(100% + 32px);
+  }
+  .blocks-container img {
+    width: 90%;
+    height: calc(100% - 30px);
+    object-fit: contain;
+  }
+  .memory-game .overlay .Message {
+    width: 80%;
+  }
+  .memory-game .memory-holder .info .line{
+    display: block;
+  }
+}
+
+/* Medium screens */
+@media (min-width: 576px) and (max-width: 992px) {
+  .memory-game .blocks-container {
+    width: 80%;
+  }
+  .blocks-container .game-block {
+    flex: 1 0 120px;
+  }
+  .blocks-container img {
+    width: 110px;
+    height: calc(100% - 25px);
+  }
+  .memory-game .overlay .Message {
+    width: 60%;
+  }
+}
+
+/* Large screens */
+@media (min-width: 992px) {
+  .memory-game .blocks-container {
+    width: 60%;
+  }
+  .blocks-container .game-block {
+    flex: 1 0 160px;
+  }
+  .blocks-container img {
+    width: 140px;
+    height: calc(100% - 30px);
+  }
+  .memory-game .overlay .Message {
+    width: 50%;
+  }
+}

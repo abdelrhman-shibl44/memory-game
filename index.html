@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css"/>
+  <title>Document</title>
+</head>
+<body>
+    <!-- make memory game -->
+    <section class="memory-game ">
+
+      <!-- control audio -->
+      <div class="control-volume">
+        <label for="volume-slider">Volume:</label>
+        <input title="volumn" type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1"/>
+      </div>
+      <div class="overlay">
+          <span>Start Game</span>
+      </div>
+      <div class="memory-holder">
+          <div class="info">
+              <div class="name">
+                  Hello: <span></span>
+              </div>
+              <div class="line"></div>
+              <div class="mistakes">
+                  wrong Tries: <span></span>
+              </div>
+          </div>
+          <div class="blocks-container">
+              <div class="game-block" data-control="css">
+                  <div class="face front">
+                      <img  src="images/css.png" alt="image">
+                  </div>
+                  <div class="face back"></div>
+              </div>
+              <div class="game-block"data-control="css">
+                  <div class="face front" >
+                      <img  src="images/css.png" alt="image">
+                  </div>
+                  <div class="face back"></div>
+              </div>
+              <div class="game-block"  data-control="html">
+                  <div class="face front" >
+                      <img  src="images/html.png" alt="image">
+                  </div>
+                  <div class="face back" ></div>
+              </div>
+              <div class="game-block" data-control="html">
+                  <div class="face front" >
+                      <img  src="images/html.png" alt="image">
+                  </div>
+                  <div class="face back" ></div>
+              </div>
+              <div class="game-block" data-control="180">
+                  <div class="face front" >
+                      <img  src="images/python.png" alt="image">
+                  </div>
+                  <div class="face back"></div>
+              </div>
+              <div class="game-block" data-control="180">
+                  <div class="face front">
+                      <img  src="images/python.png" alt="image">
+                  </div>
+                  <div class="face back"></div>
+              </div>
+              <div class="game-block"  data-control="sophia">
+                  <div class="face front">
+                      <img  src="images/girl.png" alt="image">
+                  </div>
+                  <div class="face back"></div>
+              </div>
+              <div class="game-block" data-control="sophia">
+                  <div class="face front">
+                      <img  src="images/girl.png" alt="image">
+                  </div>
+                  <div class="face back"></div>
+              </div>
+              <div class="game-block"  data-control="angular">
+                  <div class="face front">
+                      <img  src="images/angular-14a0f6532f.png" alt="image">
+                  </div>
+                  <div class="face back"></div>
+              </div>
+              <div class="game-block" data-control="angular">
+                  <div class="face front">
+                      <img  src="images/angular-14a0f6532f.png" alt="image">
+                  </div>
+                  <div class="face back"></div>
+              </div>
+              <div class="game-block" data-control="cola">
+                  <div class="face front">
+                      <img  src="images/cola.png" alt="image">
+                  </div>
+                  <div class="face back"></div>
+              </div>
+              <div class="game-block" data-control="cola">
+                  <div class="face front">
+                      <img  src="images/cola.png" alt="image">
+                  </div>
+                  <div class="face back"></div>
+              </div>
+              <div class="game-block" data-control="kiss">
+                  <div class="face front" >
+                      <img  src="images/bootstrap.png" alt="image">
+                  </div>
+                  <div class="face back"></div>
+              </div>
+              <div class="game-block" data-control="kiss">
+                  <div class="face front" >
+                      <img  src="images/bootstrap.png" alt="image">
+                  </div>
+                  <div class="face back"></div>
+              </div>
+              <div class="game-block" data-control="learn">
+                  <div class="face front" >
+                      <img  src="images/js.png" alt="image">
+                  </div>
+                  <div class="face back"></div>
+              </div>
+              <div class="game-block" data-control="learn">
+                  <div class="face front" >
+                      <img  src="images/js.png" alt="image">
+                  </div>
+                  <div class="face back"></div>
+              </div>
+          </div>
+          <audio id="success" src="/sounds/success.mp4" preload="auto"></audio>
+          <audio id="fail" src="/sounds/fail.mp4" preload="auto"></audio>
+          <audio id="calm" src="/sounds/اسلام صبحي في قمة الروعه في سورة طه.mp4" preload="auto"></audio>
+  </section>
+  <script src="javascript/index.js"></script>
+</body>
+</html>
