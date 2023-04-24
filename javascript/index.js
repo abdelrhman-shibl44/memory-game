@@ -131,7 +131,7 @@ function StylingMessage() {
     if (message.style.opacity < 1) {
     }
     message.style.width = "100%";
-    message.style.top = "37%";
+    message.style.top = "35%";
   }, 1000);
 }
 function createEndSuccessPopUp() {
