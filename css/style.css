@@ -1,16 +1,23 @@
 *{
   padding:0;
   margin:0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 body{
   background-color: #fff;
 }
 /* control volume */
 .control-volume{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 25px;
 }
 
@@ -52,9 +59,14 @@ body{
   width: calc(100% - 100px);
   margin: auto;
   border:2px solid rgb(86, 160, 229); ;
-  box-shadow: 0 0 5px  rgb(94, 168, 237);;
+  -webkit-box-shadow: 0 0 5px  rgb(94, 168, 237); ;
+          box-shadow: 0 0 5px  rgb(94, 168, 237);;
+  display:-webkit-box;;
+  display:-ms-flexbox;;
   display:flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 20px 25px;
   font-weight:bold;
   font-size:1.5rem;
@@ -71,42 +83,73 @@ body{
   display: none;
 }
 .blocks-container{
+  display:-webkit-box;
+  display:-ms-flexbox;
   display:flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width:1000px;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 50px auto;
   position: relative;
-  transform:scale(0.8);
+  -webkit-transform:scale(0.8);
+      -ms-transform:scale(0.8);
+          transform:scale(0.8);
   top: -100px;
 }
 .blocks-container .game-block{
   height: 230px;
   position: relative;
   margin: 0 25px 35px;
-  flex: 1 0 160px; 
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 160px;
+          flex: 1 0 160px; 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
   display: flex;
-  justify-content: center;
-  align-items: center;
-  transform-style:preserve-3d;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform-style:preserve-3d;
+          transform-style:preserve-3d;
   cursor:pointer;
+  -webkit-transition: 0.5s -webkit-transform;
+  transition: 0.5s -webkit-transform;
+  -o-transition: 0.5s transform ;
   transition: 0.5s transform ;
+  transition: 0.5s transform, 0.5s -webkit-transform;
 }
 .blocks-container .game-block .face{
   position: absolute;
   width: 100%;
   height: 100%;
-  box-shadow: 0 0 5px  rgb(99, 174, 244);;
-  backface-visibility: hidden;
+  -webkit-box-shadow: 0 0 5px  rgb(99, 174, 244);
+          box-shadow: 0 0 5px  rgb(99, 174, 244);;
+  -webkit-backface-visibility: hidden;;
+          backface-visibility: hidden;
   border:2px solid rgb(71 131 186);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .blocks-container .game-block .front{
   background-color: lightslategray;
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 
   
 }
@@ -120,24 +163,30 @@ body{
   font-weight:bold;
   color:#fff;
   left: 50%;
-  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
   
 }
 .blocks-container img{
   max-width: 100%;
   width: 140px;
   height: calc(100% - 30px);
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .memory-game .overlay{
   position:absolute;
   background-color: rgba(64, 101, 171, 0.3);
-  box-shadow: inset 3px -71px 241px 20px rgb(64 101 171 / 30%);
+  -webkit-box-shadow: inset 3px -71px 241px 20px rgb(64 101 171 / 30%);
+          box-shadow: inset 3px -71px 241px 20px rgb(64 101 171 / 30%);
   width:100%;
   height: 100%;
   left: 0;
   top: 0;
   z-index: 5;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
   transition: 1s;
   opacity: 1;
 }
@@ -149,10 +198,13 @@ body{
   color: #444;
   text-align: center;
   opacity: 0;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
   transition: all 1s;
   border-radius: 0;
   padding: 10px;
-  box-shadow:  0  0 80px rgb(51 95 162);
+  -webkit-box-shadow:  0  0 80px rgb(51 95 162);
+          box-shadow:  0  0 80px rgb(51 95 162);
   cursor: none;
 }
 
@@ -165,14 +217,17 @@ body{
   border-radius:10px;
   top: 50%;
   left: 50%;
-  transform:translate(-50%,-50%);
+  -webkit-transform:translate(-50%,-50%);
+      -ms-transform:translate(-50%,-50%);
+          transform:translate(-50%,-50%);
   cursor:pointer;
   z-index: 100;
   width: 250px;
 }
 .isflipped,
 .hasMatched{
-  transform:rotateY(180deg)
+  -webkit-transform:rotateY(180deg);
+          transform:rotateY(180deg)
 }
 .noclick{
   pointer-events:none;
@@ -182,7 +237,9 @@ body{
 /* Medium screens */
 @media (min-width: 576px) and (max-width: 992px) {
   .memory-game .blocks-container {
-    transform:translateX(-50%) scale(0.8);
+    -webkit-transform:translateX(-50%) scale(0.8);
+        -ms-transform:translateX(-50%) scale(0.8);
+            transform:translateX(-50%) scale(0.8);
     position: relative;
     top: -50%;
     left: 50%;
@@ -196,7 +253,9 @@ body{
     height: 100vh;
   }
   .memory-game .blocks-container {
-    transform:translate(-50%,-50%) scale(0.4);
+    -webkit-transform:translate(-50%,-50%) scale(0.4);
+        -ms-transform:translate(-50%,-50%) scale(0.4);
+            transform:translate(-50%,-50%) scale(0.4);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -213,7 +272,9 @@ body{
 }
 @media (max-width: 280px) {
   .memory-game .blocks-container {
-    transform:translate(-50%,-50%) scale(0.3);
+    -webkit-transform:translate(-50%,-50%) scale(0.3);
+        -ms-transform:translate(-50%,-50%) scale(0.3);
+            transform:translate(-50%,-50%) scale(0.3);
     position: absolute;
     top: 50%;
     left: 50%;
