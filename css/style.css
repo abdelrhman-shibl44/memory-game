@@ -73,17 +73,22 @@ body{
 .blocks-container{
   display:flex;
   flex-wrap: wrap;
-  width: 1000px;
+  width:1000px;
   justify-content: center;
+  align-items: center;
   margin: 50px auto;
+  position: relative;
+  scale: 0.8;
+  top: -100px;
 }
 .blocks-container .game-block{
   height: 230px;
   position: relative;
   margin: 0 25px 35px;
-  flex: 1 0 160px;
+  flex: 1 0 160px; 
   display: flex;
   justify-content: center;
+  align-items: center;
   transform-style:preserve-3d;
   cursor:pointer;
   transition: 0.5s transform ;
@@ -173,76 +178,54 @@ body{
   pointer-events:none;
 }
 /* start responsive */
-/* Small screens */
-@media (max-width: 576px) {
-
-  .memory-game .memory-holder .info {
-    font-size: 1rem;
-    width: calc(100% - 10px);
-  }
-  
-  .memory-game .blocks-container {
-    width: 90%;
-  }
-  .blocks-container .game-block {
-    flex: 1 0 calc(25.33% - 20px);
-    height: 125px;
-    margin: 0 20px 0px ;
-  }
-  .blocks-container .game-block .back::before {
-    font-size: 6rem;
-  }
-  
-  .blocks-container .game-block .face {
-    height: 80%;
-    width: calc(100% + 32px);
-  }
-  .blocks-container img {
-    width: 90%;
-    height: calc(100% - 30px);
-    object-fit: contain;
-  }
-  .memory-game .overlay .Message {
-    width: 80%;
-    top:40px;
-  }
-  .memory-game .memory-holder .info .line{
-    display: block;
-  }
-}
 
 /* Medium screens */
 @media (min-width: 576px) and (max-width: 992px) {
   .memory-game .blocks-container {
-    width: 80%;
+    scale: 0.7;
+    position: relative;
+    top: -100px;
+    left: 50%;
+    translate: -50%;
+  }
+}
+@media (max-width: 767px) {
+  .memory-game .memory-holder {
+    height: 100vh;
+  }
+  .memory-game .blocks-container {
+    scale: 0.4;
+    position: relative;
+    top: -25%;
+    left: 50%;
+    height: 100vh;
+    translate: -50%;
+    padding: 29px;
+  }
+  .memory-game .memory-holder .info {
+    width: calc(100% - 30px);
+    padding:20px 15px;
+    font-size: 20px;
   }
   .blocks-container .game-block {
-    flex: 1 0 120px;
+    padding:0 19px ;
   }
-  .blocks-container img {
-    width: 110px;
-    height: calc(100% - 25px);
+}
+@media (max-width: 280px) {
+  .memory-game .blocks-container {
+    scale: 0.3;
+    position: relative;
+    top: -25%;
+    left: 50%;
+    height: 100vh;
+    translate: -50%;
   }
-  .memory-game .overlay .Message {
-    width: 60%;
+  .memory-game .memory-holder .info {
+    width: calc(100% - 0px);
+    padding:20px 15px;
+    font-size: 15px;
   }
 }
 
-/* Large screens */
-@media (min-width: 992px) {
-  .memory-game .blocks-container {
-    width: 60%;
-  }
-  .blocks-container .game-block {
-    flex: 1 0 160px;
-  }
-  .blocks-container img {
-    width: 140px;
-    height: calc(100% - 30px);
-  }
-  .memory-game .overlay .Message {
-    width: 50%;
-  }
-}
 /* end responsive */
 /* end coding */
