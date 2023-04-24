@@ -78,7 +78,7 @@ body{
   align-items: center;
   margin: 50px auto;
   position: relative;
-  scale: 0.8;
+  transform:scale(0.8);
   top: -100px;
 }
 .blocks-container .game-block{
@@ -182,24 +182,24 @@ body{
 /* Medium screens */
 @media (min-width: 576px) and (max-width: 992px) {
   .memory-game .blocks-container {
-    scale: 0.7;
+    transform:translateX(-50%) scale(0.8);
     position: relative;
-    top: -100px;
+    top: -50%;
     left: 50%;
-    translate: -50%;
   }
 }
 @media (max-width: 767px) {
+  .memory-game {
+    height: 100vh;
+  }
   .memory-game .memory-holder {
     height: 100vh;
   }
   .memory-game .blocks-container {
-    scale: 0.4;
-    position: relative;
-    top: -25%;
+    transform:translate(-50%,-50%) scale(0.4);
+    position: absolute;
+    top: 50%;
     left: 50%;
-    height: 100vh;
-    translate: -50%;
     padding: 29px;
   }
   .memory-game .memory-holder .info {
@@ -213,12 +213,10 @@ body{
 }
 @media (max-width: 280px) {
   .memory-game .blocks-container {
-    scale: 0.3;
-    position: relative;
-    top: -25%;
+    transform:translate(-50%,-50%) scale(0.3);
+    position: absolute;
+    top: 50%;
     left: 50%;
-    height: 100vh;
-    translate: -50%;
   }
   .memory-game .memory-holder .info {
     width: calc(100% - 0px);
