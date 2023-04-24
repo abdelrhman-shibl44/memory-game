@@ -5,7 +5,7 @@ const gameBlocks = document.querySelectorAll(".blocks-container .game-block");
 const mainSection = document.querySelector(".memory-game");
 const overlayGame = document.querySelector(".memory-game .overlay");
 const HelloName = document.querySelector(".memory-holder .name span");
-const message = document.querySelector(".Message")
+
 
 
 // control the volume of sound 
@@ -46,9 +46,9 @@ mainContainer = document.querySelector(".blocks-container");
 block_container = document.querySelector(".blocks-container").children;
 ArrayBlock_container = Array.from(block_container);
 orderArray = [...Array(ArrayBlock_container.length).keys()];
-console.log(orderArray);
+
 shuffle(orderArray);
-console.log(orderArray);
+
 
 ArrayBlock_container.forEach((block, index) => {
   block.addEventListener("click", (e) => {
@@ -65,7 +65,7 @@ function shuffle(array) {
     random = Math.floor(Math.random() * current);
     [array[current], array[random]] = [array[random], array[current]];
   }
-  console.log(random);
+  
   return array;
 }
 function checkflip(flip) {
@@ -73,10 +73,9 @@ function checkflip(flip) {
     flippedBlock.classList.contains("isflipped")
   );
 
-  // console.log(filterFlippedCards);
 
   if (filterFlippedCards.length === 2) {
-    console.log("there is two flipped");
+    
     mainContainer.classList.add("noclick");
     setTimeout(() => {
       mainContainer.classList.remove("noclick");
@@ -87,7 +86,7 @@ function checkflip(flip) {
 
 function checkIfMatched(firstBlock, secondBlock) {
   let wrongTries = document.querySelector(".info .mistakes span");
-  console.log(wrongTries);
+  
   if (firstBlock.dataset.control === secondBlock.dataset.control) {
     if_equal++;
     firstBlock.classList.remove("isflipped");
@@ -96,17 +95,19 @@ function checkIfMatched(firstBlock, secondBlock) {
     secondBlock.classList.add("hasMatched");
     success.play();
     if (if_equal === 8 && if_Notequal > 0 && if_Notequal < 7) {
-      console.log(console.log(if_Notequal));
+      
       createEndSuccessPopUp();
+      
       document.querySelector(
         ".Message"
-      ).innerHTML = `congratulations you made just ${if_Notequal} mistakes`;
-      StylingMessage();
-      audio.pause();
-    }
-  } else {
-    if_Notequal++;
-    if (if_Notequal === 7) {
+        ).innerHTML = `congratulations you made just ${if_Notequal} mistakes`;
+        StylingMessage();
+        audio.pause();
+      }
+    } else {
+      if_Notequal++;
+      if (if_Notequal === 7) {
+      
       createEndSuccessPopUp();
       document.querySelector(
         ".Message"
@@ -123,6 +124,16 @@ function checkIfMatched(firstBlock, secondBlock) {
   }
 }
 
+function StylingMessage() {
+  const message = document.querySelector(".Message")
+  setTimeout(function () {
+    message.style.opacity = "1";
+    if (message.style.opacity < 1) {
+    }
+    message.style.width = "100%";
+    message.style.top = "37%";
+  }, 1000);
+}
 function createEndSuccessPopUp() {
   overlaySuccess = document.createElement("div");
   overlaySuccess.className = "overlay";
@@ -139,14 +150,5 @@ function createEndSuccessPopUp() {
     document.querySelector(".info .mistakes span").innerHTML = "";
     window.location.reload();
   };
-}
-function StylingMessage() {
-  setTimeout(function () {
-    if (message.style.opacity < 1) {
-      message.style.opacity = "1";
-    }
-    message.style.width = "100%";
-    message.style.top = "42%";
-  }, 1000);
 }
 // end memory game
